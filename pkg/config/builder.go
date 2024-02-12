@@ -39,6 +39,7 @@ type Builder interface {
 	WithCreationDate(time time.Time) Builder
 	WithCustomFonts([]*entity.CustomFont) Builder
 	WithBackgroundImage([]byte, extension.Type) Builder
+	WithRTLMode(enabled bool) Builder
 	Build() *entity.Config
 }
 
@@ -59,6 +60,7 @@ type CfgBuilder struct {
 	orientation       orientation.Type
 	metadata          *entity.Metadata
 	backgroundImage   *entity.Image
+	rtlMode           bool
 }
 
 // NewBuilder is responsible to create an instance of Builder.
@@ -305,6 +307,12 @@ func (b *CfgBuilder) WithBackgroundImage(bytes []byte, ext extension.Type) Build
 	return b
 }
 
+// WithRTLMode defines the option to enable support for right-to-left languages
+func (b *CfgBuilder) WithRTLMode(enabled bool) Builder {
+	b.rtlMode = enabled
+	return b
+}
+
 // Build finalizes the customization returning the entity.Config.
 func (b *CfgBuilder) Build() *entity.Config {
 	return &entity.Config{
@@ -322,6 +330,7 @@ func (b *CfgBuilder) Build() *entity.Config {
 		Metadata:          b.metadata,
 		CustomFonts:       b.customFonts,
 		BackgroundImage:   b.backgroundImage,
+		RTLMode:           b.rtlMode,
 	}
 }
 

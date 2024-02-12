@@ -23,6 +23,7 @@
   * [Parallelism](v2/features/parallelism.md?id=parallelism)
   * [Protection](v2/features/protection.md?id=protection)
   * [QR Code](v2/features/qrcode.md?id=qrcode)
+  * [RTL Mode](v2/features/rtlmode.md?id=rtl-mode)
   * [Signature](v2/features/signature.md?id=signature)
   * [Text](v2/features/text.md?id=text)
   * [Unit Testing](v2/features/unittests.md?id=unit-testing)

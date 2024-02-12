@@ -1,0 +1,3 @@
+generate -> avg: 3.37ms, executions: [3.37ms]
+header -> avg: 625.00ns, executions: [625.00ns]
+file_size -> 13.54Kb

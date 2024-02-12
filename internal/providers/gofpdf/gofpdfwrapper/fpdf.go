@@ -104,6 +104,7 @@ type Fpdf interface {
 	RegisterImageOptions(fileStr string, options gofpdf.ImageOptions) (info *gofpdf.ImageInfoType)
 	RegisterImageOptionsReader(imgName string, options gofpdf.ImageOptions, r io.Reader) (info *gofpdf.ImageInfoType)
 	RegisterImageReader(imgName, tp string, r io.Reader) (info *gofpdf.ImageInfoType)
+	RTL()
 	SetAcceptPageBreakFunc(fnc func() bool)
 	SetAlpha(alpha float64, blendModeStr string)
 	SetAuthor(authorStr string, isUTF8 bool)

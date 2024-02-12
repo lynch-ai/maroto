@@ -746,6 +746,34 @@ func (_c *Builder_WithProtection_Call) RunAndReturn(run func(protection.Type, st
 	return _c
 }
 
+// Builder_WithRTLMode_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'WithRTLMode'
+type Builder_WithRTLMode_Call struct {
+	*mock.Call
+}
+
+// WithRTLMode is a helper method to define mock.On call
+//   - enabled bool
+func (_e *Builder_Expecter) WithRTLMode(enabled interface{}) *Builder_WithRTLMode_Call {
+	return &Builder_WithRTLMode_Call{Call: _e.mock.On("WithRTLMode", enabled)}
+}
+
+func (_c *Builder_WithRTLMode_Call) Run(run func(enabled bool)) *Builder_WithRTLMode_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(bool))
+	})
+	return _c
+}
+
+func (_c *Builder_WithRTLMode_Call) Return(_a0 config.Builder) *Builder_WithRTLMode_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Builder_WithRTLMode_Call) RunAndReturn(run func(bool) config.Builder) *Builder_WithRTLMode_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
 // WithSubject provides a mock function with given fields: subject, isUTF8
 func (_m *Builder) WithSubject(subject string, isUTF8 bool) config.Builder {
 	ret := _m.Called(subject, isUTF8)

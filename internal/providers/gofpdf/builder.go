@@ -53,6 +53,10 @@ func (b *builder) Build(cfg *entity.Config, cache cache.Cache) *Dependencies {
 		fpdf.AddUTF8FontFromBytes(font.Family, string(font.Style), font.Bytes)
 	}
 
+	if cfg.RTLMode {
+		fpdf.RTL()
+	}
+
 	fpdf.SetMargins(cfg.Margins.Left, cfg.Margins.Top, cfg.Margins.Right)
 	fpdf.AddPage()
 

@@ -21,6 +21,7 @@ type Config struct {
 	Compression       bool
 	Metadata          *Metadata
 	BackgroundImage   *Image
+	RTLMode           bool
 }
 
 // ToMap converts Config to a map[string]interface{} .
@@ -77,6 +78,10 @@ func (c *Config) ToMap() map[string]interface{} {
 
 	if c.BackgroundImage != nil {
 		m = c.BackgroundImage.AppendMap(m)
+	}
+
+	if c.RTLMode {
+		m["rtl_mode"] = c.RTLMode
 	}
 
 	return m

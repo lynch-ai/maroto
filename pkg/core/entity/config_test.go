@@ -50,6 +50,7 @@ func TestConfig_ToMap(t *testing.T) {
 	assert.Equal(t, extension.Png, m["entity_extension"])
 	assert.Equal(t, 100.0, m["background_dimension_width"])
 	assert.Equal(t, 200.0, m["background_dimension_height"])
+	assert.Equal(t, true, m["rtl_mode"])
 }
 
 func fixtureConfig() Config {
@@ -74,6 +75,7 @@ func fixtureConfig() Config {
 		Compression:       true,
 		Metadata:          &metadata,
 		BackgroundImage:   &image,
+		RTLMode:           true,
 	}
 }
 
